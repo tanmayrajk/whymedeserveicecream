@@ -18,6 +18,14 @@ body {
 a {
   color: #ba2d0b;
   font-weight: 600;
+  transition: 100ms;
+  border-radius: 0.25rem;
+}
+
+a:hover {
+  color: #d5f2e3;
+  background-color: #ba2d0b;
+  padding: 0.1rem 0.3rem;
 }
 
 h1 {
@@ -36,7 +44,8 @@ footer {
 #bars {
   font-family: "Playfair Display", serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.03rem;
   line-height: 1.75;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -52,7 +61,7 @@ button {
   border: none;
   padding: 0.3rem 0.7rem;
   cursor: pointer;
-  transition: 100ms;
+  transition: 200ms;
 }
 
 button:hover {
@@ -68,4 +77,10 @@ img {
   margin-top: 2rem;
   width: 400px;
   border-radius: 0.25rem;
+  border: 2px solid #ba2d0b;
+  transition: 200ms;
+}
+
+img:hover {
+  transform: scale(1.05);
 }
