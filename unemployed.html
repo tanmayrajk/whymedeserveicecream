@@ -8,17 +8,20 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <h1>unemployed</h1>
-    <button>make text unemployed safe</button>
-    <p><i>me unemployed, me got no job;</i></p>
-    <p><i>me got no job, me broke;</i></p>
-    <p><i>me broke, me can't buy ice cream;</i></p>
-    <p><i>me can't buy ice cream, me hungry;</i></p>
-    <p><i>me hungry, me sad;</i></p>
-    <p><i>me sad, me die;</i></p>
-    <p><i>me ded, u no gib me ice cream, u killer;</i></p>
+    <button>unemployed filter</button>
+    <div id="bars">
+      <p><i>me unemployed, me got no job;</i></p>
+      <p><i>me got no job, me broke;</i></p>
+      <p><i>me broke, me can't buy ice cream;</i></p>
+      <p><i>me can't buy ice cream, me hungry;</i></p>
+      <p><i>me hungry, me sad;</i></p>
+      <p><i>me sad, me die;</i></p>
+      <p><i>me ded, u no gib me ice cream, u killer;</i></p>
+    </div>
     <a href="/index.html">go back</a>
     <footer>
       <p>
@@ -31,5 +34,28 @@
         credit card details :D
       </p>
     </footer>
+    <script>
+      document.querySelector("button")?.addEventListener("click", () => {
+        const bars = document.querySelector("#bars");
+        if (bars) {
+          let newBarsTexts = [];
+          const allBars = bars.querySelectorAll("i");
+          allBars.forEach((bar) => {
+            let text = bar.textContent;
+            if (text.includes("job")) {
+              text = text.replace("job", "j*b");
+            }
+            newBarsTexts.push(text);
+          });
+          console.log(newBarsTexts);
+          bars.innerHTML = "";
+          newBarsTexts.forEach((text) => {
+            const p = document.createElement("p");
+            p.innerHTML = `<i>${text}</i>`;
+            bars.appendChild(p);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
